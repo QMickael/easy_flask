@@ -1,0 +1,3 @@
+include LICENSE README AUTHORS
+graft easy_flask/data/project/client/templates
+graft easy_flask/data/project/client/static
