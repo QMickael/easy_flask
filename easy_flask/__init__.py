@@ -1,1 +1,3 @@
-from .core import start
+__version__ = '0.1'
+
+from .cli import cli

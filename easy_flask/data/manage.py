@@ -1,11 +1,13 @@
 # manage.py
-
-
 import os
 import sys
 import getpass
 import unittest
 import coverage
+import argparse
+import time
+import string
+import random
 
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
@@ -87,18 +89,8 @@ def create_admin():
 
     db.session.add(User(username=username, email=email, password=password, admin=True))
     db.session.commit()
-    print('Admin user created...\t\t\t', end="", flush=True)
-    print("{green}Ok{end}".format(green=colors.OKGREEN, end=colors.ENDC))
-
-
-@manager.command
-def init_project():
-    '''Initialize a flask-project'''
-    name = input('Name project : ')
-    name_project(name)
-
-def name_project(name, test=False):
-    print('Initializing a flask project [{0}]...\t\t\t'.format(name), end="", flush=True)
+    print('Creating admin user...\t\t\t', end="", flush=True)
+    time.sleep(2)
     print("{green}Ok{end}".format(green=colors.OKGREEN, end=colors.ENDC))
 
 
@@ -106,6 +98,25 @@ def name_project(name, test=False):
 def create_data():
     """Creates sample data."""
     pass
+
+
+@manager.command
+def create_users():
+    """Creates users list on db, to work with users"""
+
+    #parser = argparse.ArgumentParser()
+    #parser.add_argument('-n', help='users number to create')
+    #args = parser.parse_args()
+    #n = args.n
+
+    for i in range(50):
+        user = User(username='username' + str(i),
+                    email='username' + str(i) +'@mail.com',
+                    password=''.join(random.choice(string.ascii_lowercase + string.digits) for i in range(10))
+                    )
+        db.session.add(user)
+
+    db.session.commit()
 
 
 if __name__ == '__main__':

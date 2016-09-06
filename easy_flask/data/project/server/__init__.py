@@ -65,7 +65,7 @@ def get_locale():
     if override:
         session['lang'] = override
 
-    return session.get('lang', 'fr')
+    return session.get('lang', 'en')
 
 ###################
 ### flask-login ###

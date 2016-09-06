@@ -1,7 +1,11 @@
 # easy_flask
-Create your flask project with main extensions, easily and quickly
+Create your flask project with main extensions, easily and quickly.
+This tools use my fork [flask-skeleton](https://github.com/QMickael/flask-skeleton.git) from realpython flask-skeleton [repo](https://github.com/realpython/flask-skeleton.git). Before use easy_flask, be sure you know [Blueprints](http://flask.pocoo.org/docs/0.11/blueprints/) development !
 
-## Quick Start
+
+### Next features
+- Add translation function with cli
+- Add Flask-Mail
 
 ### Installation
 

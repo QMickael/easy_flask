@@ -10,7 +10,6 @@ Flask with main extensions
 	- and more
 """
 from setuptools import setup, find_packages
-import easy_flask
 
 setup(
     name='Easy_Flask',
@@ -32,7 +31,7 @@ setup(
 		'bcrypt',
 		'blinker',
 		'cffi',
-		'click',
+		'Click',
 		'coverage',
 		'dominate',
 		'Flask',
@@ -73,7 +72,7 @@ setup(
 
 	entry_points = {
 		'console_scripts': [
-			'easy-flask = easy_flask.core:start',
+			'easy-flask = easy_flask.cli:cli',
 		],
 	}
 )
